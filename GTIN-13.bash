@@ -2,6 +2,20 @@
 
 read -p "Inserici il Numero: " num
 gtin=0;
+if [[ "$num" =~ ^[0-9]+$ ]]; then
+    if (( ${#num} < 12 )); then
+        echo "Errore: il numero deve avere almeno 12 cifre "
+         exit 1
+fi
+
+else
+  echo "Errore: Non è un numero intero"
+  exit 1
+  
+fi
+
+
+
 for ((i = ${#num} -1; i >= 0; i--)); do
     elemento=${num:i:1}
     echo "posizione $i: / Numero:$elemento"
