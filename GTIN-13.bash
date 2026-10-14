@@ -22,7 +22,7 @@ for ((i = ${#num} -1; i >= 0; i--)); do
     x=$(( 10 - posizione ))
     
     y=$((gtin + x))
-    echo "
+    echo "arrondamento: $y"
 
    result=$((y - gtin))
    echo "checksum: $result"
